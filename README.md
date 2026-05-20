@@ -1,10 +1,62 @@
-This report investigates key cryptographic algorithms; DES RSA and MD5 alongside framework execution investigation through PowerShell commands. Cryptographic strategies are essential to securing touchy
-information and guaranteeing information judgment. The Information Encryption Standard DES is a symmetric encryption algorithm that empowers quick encryption and decoding employing a single key. In any
-case DES is considered frail by present day security guidelines due to its brief key length and helplessness to brute force assaults. (S. Kelly, 2006) The RSA calculation in differentiate gives solid 
-public key cryptography by leveraging kilter key sets guaranteeing secure encryption and unscrambling fundamental for private communication. RSA is broadly utilized in securing web activity mail encryption
-and computerized marks. In any case key length altogether impacts its security making bigger keys 2048bit or higher essential for security against cutting edge computational assaults. (Laura K, 2022) In 
-conclusion MD5 could be a broadly utilized hashing work that produces fixed length hash values for information keenness confirmation, in spite of its effectiveness MD5 endures from collision vulnerabilities
-meaning two distinctive inputs can deliver the same hash making it unacceptable for cryptographic security purposes.(GeeksForGeeks, 2024) More secure options such as SHA256 are frequently favoured the report
-too digs into framework investigation utilizing PowerShell commands counting checking memory utilization assessing, accessible physical memory and analysing framework stack. By combining cryptographic 
-strategies with system level experiences, the report emphasizes the significance of security and execution in computing situations.
+# Computer Systems & Security — Cryptography & System Analysis
 
+A practical report exploring core cryptographic algorithms and system analysis using PowerShell, with hands-on experiments carried out in **CrypTool 2**.
+
+> **Module:** Computer Systems & Security  
+> **Student:** K.A. Idusha Piumika — G21328023
+
+---
+
+## About
+
+This project investigates three fundamental cryptographic algorithms — DES, RSA, and MD5 — through live encryption, decryption, and hashing experiments in CrypTool 2. It also includes PowerShell-based system analysis commands for monitoring memory and process usage on a Windows machine.
+
+---
+
+## Tasks Covered
+
+### Task 01 — DES Encryption & Decryption
+- Plaintext `"ThisIsSampleDES123"` was encrypted using the DES symmetric cipher in CrypTool 2
+- Resulting ciphertext: `E6 E3 53 81 FB 81 29 FD 12 0B 86 7C 45 90 29 4A 5A D5`
+- The ciphertext was successfully decrypted back to the original plaintext using the same key
+- **Key observation:** DES uses a 56-bit key and 16-round Feistel structure — considered weak by modern standards and vulnerable to brute-force attacks; AES is the recommended alternative
+
+### Task 02 — RSA Encryption & Decryption
+- A 1024-bit RSA key pair (public + private) was generated in CrypTool 2 using randomly selected prime numbers
+- Plaintext was encrypted using the public key `(N, e)` and decrypted using the private key `(N, d)`
+- **Key observation:** RSA is asymmetric — only the private key can decrypt what the public key encrypted; 2048-bit or higher keys are recommended for modern security
+
+### Task 03 — MD5 Hashing
+- The string `"crypto123"` was hashed using the MD5 algorithm in CrypTool 2
+- **Key observation:** MD5 produces a fixed-length hash; it is efficient but vulnerable to collision attacks and not recommended for cryptographic security — SHA-256 is preferred
+
+### Task 04 — PowerShell System Analysis
+
+| Command | Purpose |
+|---|---|
+| `Get-Process \| Select-Object Name, MemoryUsage \| Sort-Object -Descending` | Lists all running processes sorted by RAM usage (MB) |
+| `Get-CimInstance Win32_OperatingSystem \| Select-Object TotalVisibleMemorySize, FreePhysicalMemory` | Retrieves total and free physical memory |
+| `Get-Counter` | Monitors available system memory in real time |
+
+---
+
+## Tools Used
+
+- **CrypTool 2** — for DES, RSA, and MD5 experiments
+- **PowerShell** — for Windows system memory and process analysis
+
+---
+
+## Repository Contents
+
+```
+├── Report.docx          # Full written report with results and observations
+└── CrypTool file        # CrypTool 2 workspace with DES, RSA, and MD5 configurations
+```
+
+---
+
+## Author
+
+**K.A. Idusha Piumika** — G21328023  
+Computer Systems & Security Module
