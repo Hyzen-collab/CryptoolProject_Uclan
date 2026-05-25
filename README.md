@@ -58,5 +58,5 @@ This project investigates three fundamental cryptographic algorithms — DES, RS
 
 ## Author
 
-**K.A. Idusha Piumika** — G21328023  
+**K.A. Idusha Piumika** 
 Computer Systems & Security Module
